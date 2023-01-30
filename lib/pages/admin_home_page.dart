@@ -58,11 +58,70 @@ class _AdminHPState extends State<AdminHP>{
             //delete inactive button
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, AdminADS.id);
-                  /*
-                     backend, not sure if it needs popup muna
-                     or straight to success page
-                  */
+                  showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Icon(
+                                    Icons.close_rounded,
+                                    color: Colors.black,
+                                    size: 23,
+                                  ),
+                                ),
+                              ),
+                              
+                              Icon(
+                                  Icons.lock_open_rounded,
+                                  color: Colors.black54,
+                              ),
+                              
+                              Text('Input Password to proceed'),
+
+                            ],
+                          ),
+                        ),
+
+                        content: TextFormField(
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(12.0, 8, 12.0, 8),
+                            hintText: 'Password',
+                          ),
+                        ),
+
+                        actions: [
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Color(0xFFAE8537),
+                                minimumSize: Size(30, 40),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.zero),
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.pushNamed(context, AdminADS.id);
+                                //admin_inactive_deleted_successful.dart
+                              },
+                              child: Text(
+                                "Edit Details",
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    //backend here for password verification
+                  );
                   },
 
                 child: Text(
@@ -72,8 +131,70 @@ class _AdminHPState extends State<AdminHP>{
 
             //create account button
             ElevatedButton(
-              onPressed: () async {
-                Navigator.pushNamed(context, AdminCA.id);
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Icon(
+                                Icons.close_rounded,
+                                color: Colors.black,
+                                size: 23,
+                              ),
+                            ),
+                          ),
+
+                          Icon(
+                            Icons.lock_open_rounded,
+                            color: Colors.black54,
+                          ),
+
+                          Text('Input Password to proceed'),
+
+                        ],
+                      ),
+                    ),
+
+                    content: TextFormField(
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.fromLTRB(12.0, 8, 12.0, 8),
+                        hintText: 'Password',
+                      ),
+                    ),
+
+                    actions: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xFFAE8537),
+                            minimumSize: Size(30, 40),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.zero),
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.pushNamed(context, AdminCA.id);
+                            //admin_inactive_deleted_successful.dart
+                          },
+                          child: Text(
+                            "Edit Details",
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
               }, //backend, same situation here
 
               child: Text(

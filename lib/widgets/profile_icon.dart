@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tagbakin_layout/pages/admin_modify_account.dart';
 
+import '../pages/admin_account_information.dart';
 import '../pages/login.dart';
 
 class ProfileIcon extends StatelessWidget{
@@ -16,7 +17,7 @@ class ProfileIcon extends StatelessWidget{
           Navigator.pop(context);
           Navigator.push(context, MaterialPageRoute(builder: (context){
 
-            return AdminMA();
+            return AdminAI();
             //admin_modify_account.dart
 
           },

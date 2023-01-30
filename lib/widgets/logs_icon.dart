@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tagbakin_layout/pages/admin_history_logs.dart';
 import 'package:tagbakin_layout/pages/admin_home_page.dart';
 import 'package:tagbakin_layout/pages/admin_inactive_page.dart';
 
@@ -15,7 +16,7 @@ class LogsIcon extends StatelessWidget{
         onPressed : () async{
           Navigator.pop(context);
           Navigator.push(context, MaterialPageRoute(builder: (context){
-            return AdminIP();
+            return AdminHL();
             //This leads to admin_inactive_page.dart for now
           },
           ),

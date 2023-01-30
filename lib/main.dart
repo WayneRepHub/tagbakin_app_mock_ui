@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tagbakin_layout/pages/admin_account_creation_successful.dart';
 import 'package:tagbakin_layout/pages/admin_account_deleted_successful.dart';
+import 'package:tagbakin_layout/pages/admin_account_information.dart';
 import 'package:tagbakin_layout/pages/admin_account_modify_successful.dart';
+import 'package:tagbakin_layout/pages/admin_history_logs.dart';
 import 'package:tagbakin_layout/pages/admin_home_page.dart';
 import 'package:tagbakin_layout/pages/admin_inactive_deleted_successful.dart';
 import 'package:tagbakin_layout/pages/admin_inactive_page.dart';
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
         AdminAMS.id: (context) => AdminAMS(), //Admin Account Modification Successful Page
         AdminIP.id: (context) => AdminIP(), //Admin Inactive Page
         AdminIDS.id: (context) => AdminIDS(), //Admin Inactive Deletion Successful Page
+        AdminAI.id: (context) => AdminAI(),
+        AdminHL.id: (context) => AdminHL(),
       },
     );
   }
